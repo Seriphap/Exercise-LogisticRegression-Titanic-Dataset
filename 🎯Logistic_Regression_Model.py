@@ -50,12 +50,12 @@ model.fit(X_train_LG, y_train_LG)
 # Step 4: Make predictions on the train set
 y_predict_train_LG = model.predict(X_train_LG)
 st.write("Classification Report for Training Set:")
-st.write('Predicted train values (Head):', y_predict_train_LG[:10])  # First 10 predicted values
-st.write('Predicted train values (Tail):', y_predict_train_LG[-10:])  # Last 10 predicted values
+#st.write('Predicted train values (Head):', y_predict_train_LG[:10])  # First 10 predicted values
+#st.write('Predicted train values (Tail):', y_predict_train_LG[-10:])  # Last 10 predicted values
 
 # Step 5: Evaluate the model's performance (Training Set)
 st.write("Classification Report:")
-st.write(classification_report(y_train_LG, y_predict_train_LG))
+#st.write(classification_report(y_train_LG, y_predict_train_LG))
 
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
 st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
@@ -67,12 +67,12 @@ st.write(confusion_matrix(y_train_LG, y_predict_train_LG))
 # Step 6: Make predictions on the test set
 y_predict_test_LG = model.predict(X_test_LG)
 st.write("\nClassification Report for Test Dataset:")
-st.write('Predicted test values (Head):', y_predict_test_LG[:10])  # First 10 predicted values
-st.write('Predicted test values (Tail):', y_predict_test_LG[-10:])  # Last 10 predicted values
+#st.write('Predicted test values (Head):', y_predict_test_LG[:10])  # First 10 predicted values
+#st.write('Predicted test values (Tail):', y_predict_test_LG[-10:])  # Last 10 predicted values
 
 # Step 7: Evaluate the model's performance (Test Set)
-st.write("Classification Report (Test Set):")
-st.write(classification_report(y_test_LG, y_predict_test_LG))
+#st.write("Classification Report (Test Set):")
+#st.write(classification_report(y_test_LG, y_predict_test_LG))
 
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
 st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
@@ -80,7 +80,6 @@ st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
 # Confusion Matrix for Test Set
 st.write("Confusion Matrix (Test Set):")
 st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
-
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -92,15 +91,15 @@ cm_train_LG = confusion_matrix(y_train_LG, y_predict_train_LG)
 # Create subplots
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))  # Change to 1 row, 2 columns
 
-# Plot confusion matrix for Logistic Regression (Test)
-sns.heatmap(cm_test_LG, annot=True, fmt='d', cmap='Blues', ax=axes[0])
-axes[0].set_title('Logistic Regression Confusion Matrix (Test)')
+# Plot confusion matrix for Logistic Regression (Train)
+sns.heatmap(cm_train_LG, annot=True, fmt='d', cmap='Blues', ax=axes[0])
+axes[0].set_title('Logistic Regression Confusion Matrix (Train)')
 axes[0].set_xlabel('Predicted')
 axes[0].set_ylabel('Actual')
 
-# Plot confusion matrix for Logistic Regression (Train)
-sns.heatmap(cm_train_LG, annot=True, fmt='d', cmap='Blues', ax=axes[1])
-axes[1].set_title('Logistic Regression Confusion Matrix (Train)')
+# Plot confusion matrix for Logistic Regression (Test)
+sns.heatmap(cm_test_LG, annot=True, fmt='d', cmap='Blues', ax=axes[1])
+axes[1].set_title('Logistic Regression Confusion Matrix (Test)')
 axes[1].set_xlabel('Predicted')
 axes[1].set_ylabel('Actual')
 
