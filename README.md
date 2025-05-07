@@ -1,5 +1,5 @@
 # Exercise-LogisticRegression-Titanic-Dataset
-<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application): Waiting... </p> 
+<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application): https://exercise-logisticregression-titanic-dataset-adabos5ttgoaijpnuy.streamlit.app/ </p> 
 <br>
 
 ## Step1: Data cleansing and features selection
