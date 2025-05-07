@@ -53,7 +53,7 @@ st.write("Classification Report for Training Set:")
 #st.write('Predicted train values (Tail):', y_predict_train_LG[-10:])  # Last 10 predicted values
 
 # Step 5: Evaluate the model's performance (Training Set)
-st.write("Classification Report:")
+#st.write("Classification Report:")
 #st.write(classification_report(y_train_LG, y_predict_train_LG))
 
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
