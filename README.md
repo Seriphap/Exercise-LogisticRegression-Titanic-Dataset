@@ -43,11 +43,12 @@ print('Predicted test values (Tail):', y_predict_test_LG[-10:])  # Last 10 predi
 ```
 ## Step3: Evaluate the model's performance
 
-| Train | Test |
+| Test | Train |
 |--------|---------|
 | <img src="https://github.com/user-attachments/assets/05c3f015-96ba-447f-95c0-c7fe54c5a6db" width="500"> | <img src="https://github.com/user-attachments/assets/48bd0879-6604-42b4-a14b-1ea916e2d56a" width="500">|
 
 <img src="https://github.com/user-attachments/assets/49e3da9f-13ca-4dc0-b7ca-7d054b9d757b" width="100%">
+
 
 
 
