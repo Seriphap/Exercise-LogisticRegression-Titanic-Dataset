@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 st.title('Exercise: LogisticRegression Titanic Dataset')
-#st.set_page_config(page_title="Logistic Regression Model", page_icon="🎯")
 
 url = 'https://drive.google.com/uc?id=1w1XQ8RzDDOLrUpBoE9oqRSPLO6QILEog'
 df = pd.read_csv(url)
