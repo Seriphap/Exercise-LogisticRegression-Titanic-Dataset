@@ -1,5 +1,5 @@
 # Exercise-LogisticRegression-Titanic-Dataset
-<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application): </p> 
+<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application): Waiting... </p> 
 <br>
 
 ## Step1: Data cleansing and features selection
@@ -45,8 +45,9 @@ print('Predicted test values (Tail):', y_predict_test_LG[-10:])  # Last 10 predi
 
 | Train | Test |
 |--------|---------|
-| <img src="https://github.com/user-attachments/assets/6cc12209-4762-4a14-a194-455098acdf5f" width="800"> | <img src="https://github.com/user-attachments/assets/ef6830de-9896-4826-bf4b-d90e50b74034" width="800">|
+| <img src="https://github.com/user-attachments/assets/05c3f015-96ba-447f-95c0-c7fe54c5a6db" width="500"> | <img src="https://github.com/user-attachments/assets/48bd0879-6604-42b4-a14b-1ea916e2d56a" width="500">|
 
 <img src="https://github.com/user-attachments/assets/49e3da9f-13ca-4dc0-b7ca-7d054b9d757b" width="100%">
+
 
 
