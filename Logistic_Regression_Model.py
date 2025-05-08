@@ -54,7 +54,13 @@ st.write("Classification Report for Training Set:")
 
 # Step 5: Evaluate the model's performance (Training Set)
 #st.write("Classification Report:")
-st.write(classification_report(y_train_LG, y_predict_train_LG)) #
+#st.write(classification_report(y_train_LG, y_predict_train_LG)) #
+# Generate the classification report
+report = classification_report(y_train_LG, y_predict_train_LG, output_dict=True)
+report_df = pd.DataFrame(report).transpose()
+# Display as a table
+st.dataframe(report_df.style.format("{:.2f}"))
+
 
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
 st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
