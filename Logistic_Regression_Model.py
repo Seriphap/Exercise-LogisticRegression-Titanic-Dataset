@@ -57,7 +57,7 @@ st.write("Classification Report for Training Set:")
 
 # Step 5: Evaluate the model's performance (Training Set)
 #st.write("Classification Report:")
-#st.write(classification_report(y_train_LG, y_predict_train_LG)) #
+#st.write(classification_report(y_train_LG, y_predict_train_LG)) ####
 # Generate the classification report
 report = classification_report(y_train_LG, y_predict_train_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
@@ -86,9 +86,7 @@ st.write("\nClassification Report for Test Dataset:")
 
 # Step 7: Evaluate the model's performance (Test Set)
 #st.write("Classification Report (Test Set):")
-st.write(classification_report(y_test_LG, y_predict_test_LG)) #
-
-
+#st.write(classification_report(y_test_LG, y_predict_test_LG)) ####
 # Generate the classification report
 report = classification_report(y_test_LG, y_predict_test_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
