@@ -66,7 +66,7 @@ st.dataframe(report_df.style.format("{:.2f}"))
 
 # Create a heatmap
 fig, ax = plt.subplots(figsize=(10, 6))
-sns.heatmap(report_df.[:-2, :-1], , annot=True, cmap="Blues", fmt=".2f", ax=ax)
+sns.heatmap(report_df.loc[:-1, :-2], , annot=True, cmap="Blues", fmt=".2f", ax=ax)
 ax.set_title("Classification Report Heatmap")
 # Display in Streamlit
 st.pyplot(fig)
