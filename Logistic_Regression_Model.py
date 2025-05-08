@@ -79,7 +79,7 @@ sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
 ax.set_title("Classification Report Heatmap")
 st.pyplot(fig1)
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
-st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
+st.write(f'Accuracy on Testing Set: {accuracy_test_LG * 100:.2f}%')
 st.write("Confusion Matrix (Testing Set):")
 st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
 
