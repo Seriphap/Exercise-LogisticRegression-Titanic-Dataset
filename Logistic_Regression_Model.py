@@ -80,7 +80,7 @@ ax.set_title("Classification Report Heatmap")
 st.pyplot(fig1)
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
 st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
-st.write("Confusion Matrix (Test Set):")
+st.write("Confusion Matrix (Testing Set):")
 st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
 
 import seaborn as sns
