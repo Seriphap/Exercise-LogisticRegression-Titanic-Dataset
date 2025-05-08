@@ -54,7 +54,7 @@ st.write("Classification Report for Training Set:")
 
 # Step 5: Evaluate the model's performance (Training Set)
 #st.write("Classification Report:")
-#st.write(classification_report(y_train_LG, y_predict_train_LG))
+st.write(classification_report(y_train_LG, y_predict_train_LG)) #
 
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
 st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
@@ -71,7 +71,7 @@ st.write("\nClassification Report for Test Dataset:")
 
 # Step 7: Evaluate the model's performance (Test Set)
 #st.write("Classification Report (Test Set):")
-#st.write(classification_report(y_test_LG, y_predict_test_LG))
+st.write(classification_report(y_test_LG, y_predict_test_LG)) #
 
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
 st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
