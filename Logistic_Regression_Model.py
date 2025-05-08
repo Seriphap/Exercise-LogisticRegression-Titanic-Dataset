@@ -88,6 +88,20 @@ st.write("\nClassification Report for Test Dataset:")
 #st.write("Classification Report (Test Set):")
 st.write(classification_report(y_test_LG, y_predict_test_LG)) #
 
+
+# Generate the classification report
+report = classification_report(y_test_LG, y_predict_test_LG, output_dict=True)
+report_df = pd.DataFrame(report).transpose()
+# Display as a table
+st.dataframe(report_df.style.format("{:.2f}"))
+
+# Create a heatmap
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
+ax.set_title("Classification Report Heatmap")
+# Display in Streamlit
+st.pyplot(fig)
+
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
 st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
 
