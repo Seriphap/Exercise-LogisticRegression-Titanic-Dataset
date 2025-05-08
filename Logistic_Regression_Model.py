@@ -51,11 +51,11 @@ model.fit(X_train_LG, y_train_LG)
 
 # Step 4: Make predictions on the train set and Evaluate the model's performance (Training Set)
 y_predict_train_LG = model.predict(X_train_LG)
-st.write("Classification Report for Training Set:")
 report = classification_report(y_train_LG, y_predict_train_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
+st.write("Classification Report for Training Set:")
 # Create a heatmap
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
@@ -68,11 +68,11 @@ st.pyplot(fig)
 
 # Step 6: Make predictions on the test set and  Evaluate the model's performance (Test Set)
 y_predict_test_LG = model.predict(X_test_LG)
-st.write("\nClassification Report for Test Dataset:")
 report = classification_report(y_test_LG, y_predict_test_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
+st.write("\nClassification Report for Test Dataset:")
 # Create a heatmap
 fig1, ax1 = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
