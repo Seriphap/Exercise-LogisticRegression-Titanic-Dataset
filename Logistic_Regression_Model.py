@@ -61,6 +61,12 @@ report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
 
+# Create a heatmap
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(report_df.iloc[:-1, :-1], annot=True, cmap="Blues", fmt=".2f", ax=ax)
+ax.set_title("Classification Report Heatmap")
+# Display in Streamlit
+st.pyplot(fig)
 
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
 st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
