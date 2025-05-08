@@ -61,11 +61,10 @@ fig, ax = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
 ax.set_title("Classification Report Heatmap")
 st.pyplot(fig)
-accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
-st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
-# Confusion Matrix for Training Set
-st.write("Confusion Matrix (Training Set):")
-st.write(confusion_matrix(y_train_LG, y_predict_train_LG))
+#accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
+#st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
+#st.write("Confusion Matrix (Training Set):")
+#st.write(confusion_matrix(y_train_LG, y_predict_train_LG))
 
 # Step 6: Make predictions on the test set and  Evaluate the model's performance (Test Set)
 y_predict_test_LG = model.predict(X_test_LG)
@@ -75,15 +74,14 @@ report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
 # Create a heatmap
-fig, ax = plt.subplots(figsize=(10, 6))
+fig1, ax1 = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
-ax.set_title("Classification Report Heatmap")
-st.pyplot(fig)
-accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
-st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
-# Confusion Matrix for Test Set
-st.write("Confusion Matrix (Test Set):")
-st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
+ax1.set_title("Classification Report Heatmap")
+st.pyplot(fig1)
+#accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
+#st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
+#st.write("Confusion Matrix (Test Set):")
+#st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -93,7 +91,7 @@ cm_test_LG = confusion_matrix(y_test_LG, y_predict_test_LG)
 cm_train_LG = confusion_matrix(y_train_LG, y_predict_train_LG)
 
 # Create subplots
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))  # Change to 1 row, 2 columns
+fig3, axes = plt.subplots(1, 2, figsize=(12, 5))  # Change to 1 row, 2 columns
 
 # Plot confusion matrix for Logistic Regression (Train)
 sns.heatmap(cm_train_LG, annot=True, fmt='d', cmap='Blues', ax=axes[0])
@@ -109,4 +107,4 @@ axes[1].set_ylabel('Actual')
 
 # Adjust layout for better presentation
 plt.tight_layout()
-st.pyplot(fig)
+st.pyplot(fig3)
