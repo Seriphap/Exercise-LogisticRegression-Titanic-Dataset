@@ -49,60 +49,38 @@ model = LogisticRegression(max_iter=10000)  # Increase iterations if necessary
 # Step 3: Train the model
 model.fit(X_train_LG, y_train_LG)
 
-# Step 4: Make predictions on the train set
+# Step 4: Make predictions on the train set and Evaluate the model's performance (Training Set)
 y_predict_train_LG = model.predict(X_train_LG)
 st.write("Classification Report for Training Set:")
-#st.write('Predicted train values (Head):', y_predict_train_LG[:10])  # First 10 predicted values
-#st.write('Predicted train values (Tail):', y_predict_train_LG[-10:])  # Last 10 predicted values
-
-# Step 5: Evaluate the model's performance (Training Set)
-#st.write("Classification Report:")
-#st.write(classification_report(y_train_LG, y_predict_train_LG)) ####
-# Generate the classification report
 report = classification_report(y_train_LG, y_predict_train_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
-
 # Create a heatmap
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
 ax.set_title("Classification Report Heatmap")
-# Display in Streamlit
 st.pyplot(fig)
-
 accuracy_train_LG = accuracy_score(y_train_LG, y_predict_train_LG)
 st.write(f'Accuracy on Training Set: {accuracy_train_LG * 100:.2f}%')
-
 # Confusion Matrix for Training Set
 st.write("Confusion Matrix (Training Set):")
 st.write(confusion_matrix(y_train_LG, y_predict_train_LG))
 
-# Step 6: Make predictions on the test set
+# Step 6: Make predictions on the test set and  Evaluate the model's performance (Test Set)
 y_predict_test_LG = model.predict(X_test_LG)
 st.write("\nClassification Report for Test Dataset:")
-#st.write('Predicted test values (Head):', y_predict_test_LG[:10])  # First 10 predicted values
-#st.write('Predicted test values (Tail):', y_predict_test_LG[-10:])  # Last 10 predicted values
-
-# Step 7: Evaluate the model's performance (Test Set)
-#st.write("Classification Report (Test Set):")
-#st.write(classification_report(y_test_LG, y_predict_test_LG)) ####
-# Generate the classification report
 report = classification_report(y_test_LG, y_predict_test_LG, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
 # Display as a table
 st.dataframe(report_df.style.format("{:.2f}"))
-
 # Create a heatmap
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.heatmap(report_df.iloc[:, :-1] , annot=True, cmap="Blues", fmt=".2f", ax=ax)
 ax.set_title("Classification Report Heatmap")
-# Display in Streamlit
 st.pyplot(fig)
-
 accuracy_test_LG = accuracy_score(y_test_LG, y_predict_test_LG)
 st.write(f'Accuracy on Test Set: {accuracy_test_LG * 100:.2f}%')
-
 # Confusion Matrix for Test Set
 st.write("Confusion Matrix (Test Set):")
 st.write(confusion_matrix(y_test_LG, y_predict_test_LG))
