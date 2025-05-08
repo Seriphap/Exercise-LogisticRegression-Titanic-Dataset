@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 st.title('Exercise: LogisticRegression Titanic Dataset')
 
 url = 'https://drive.google.com/uc?id=1w1XQ8RzDDOLrUpBoE9oqRSPLO6QILEog'
