@@ -1,5 +1,5 @@
 # Exercise-LogisticRegression-Titanic-Dataset
-<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application):https://exerciselogisticregressiontitanicdataset-cmpbbggazqzs7dsqxddnz.streamlit.app/</p> 
+<p><font size="4">&nbsp;&nbsp;&nbsp;View in Steamlit (Web Application): https://exerciselogisticregressiontitanicdataset-qwtou664a8so69myvomxd.streamlit.app/ </p> 
 <br>
 
 ## Step1: Data cleansing and features selection
